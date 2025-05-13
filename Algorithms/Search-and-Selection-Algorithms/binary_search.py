@@ -2,7 +2,7 @@
 """
 
 
-def binarySearch(array: list, value: int) -> int:
+def binary_search(array: list, value: int) -> int:
     """Binary search of a list to find the index of a specified value.
     List must be sorted in ascending order.
     
@@ -30,5 +30,5 @@ def binarySearch(array: list, value: int) -> int:
 
 if __name__ == "__main__":
     data = [1, 2, 3, 6, 8, 11, 14]
-    print(binarySearch(data, 1))
-    print(binarySearch(data, 4))  # Not in the list
+    print(binary_search(data, 1))
+    print(binary_search(data, 4))  # Not in the list

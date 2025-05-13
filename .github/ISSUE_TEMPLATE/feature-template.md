@@ -7,7 +7,7 @@ assignees: RoryPoulter
 
 ---
 
-* Name: [Name]
-* Category: [Data Structure / Algorithm]
-* Subcategory: [None / Sorting / …]
-* Description: [Brief desc.]
+* **Name**: [Name]
+* **Category**: [Data Structure / Algorithm]
+* **Subcategory**: [None / Sorting / …]
+* **Description**: [Brief desc.]

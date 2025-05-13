@@ -20,14 +20,14 @@ if __name__ == "__main__":
     for algo in sorting_algorithms:
         y_vals = []
         for n in x_vals:
-            total = 0
+            TOTAL = 0
             for i in range(10):
                 unsorted_list = sample(range(1, 2001), n)
                 start = timer()
                 res = algo(unsorted_list)
                 end = timer()
-                total += (end - start)
-            mean = total / 10
+                TOTAL += (end - start)
+            mean = TOTAL / 10
             y_vals.append(end - start)
         plt.plot(x_vals, y_vals, label=algo.__name__)
     plt.legend()

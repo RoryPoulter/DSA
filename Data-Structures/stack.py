@@ -12,7 +12,7 @@ class Stack:
     def __repr__(self):
         return str(self.data)
 
-    def isEmpty(self) -> bool:
+    def is_empty(self) -> bool:
         """Checks if the stack is empty
 
         Returns:
@@ -38,7 +38,7 @@ class Stack:
         Returns:
             any: The value at the top of the stack
         """
-        if self.isEmpty():
+        if self.is_empty():
             raise ValueError("Unable to pop from stack: stack is empty")
         self.size -= 1
         return self.data.pop()
@@ -52,7 +52,7 @@ class Stack:
         Returns:
             any: The top value of the stack
         """
-        if self.isEmpty():
+        if self.is_empty():
             raise ValueError("Unable to return top item from stack: stack is empty")
         return self.data[self.size]
 

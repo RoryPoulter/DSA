@@ -2,7 +2,7 @@
 """
 
 
-def bubbleSort(array: list) -> list:
+def bubble_sort(array: list) -> list:
     """Sorts a list in ascending order using the bubble sort algorithm
     
     Time complexity: O(n^2)
@@ -29,4 +29,4 @@ def bubbleSort(array: list) -> list:
 
 if __name__ == "__main__":
     data = [6, 5, 2, 3, 4, 1]
-    print(bubbleSort(data))
+    print(bubble_sort(data))

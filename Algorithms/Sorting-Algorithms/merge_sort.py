@@ -2,7 +2,7 @@
 """
 
 
-def mergeSort(arr: list[int]) -> list[int]:
+def merge_sort(arr: list[int]) -> list[int]:
     """Sorts a list of integers using a recursive merge sort.
     
     T(n) = 2 * T(n/2) + O(n)
@@ -18,8 +18,8 @@ def mergeSort(arr: list[int]) -> list[int]:
         return arr
     # Split the list in half
     mid = len(arr) // 2
-    arr_1 = mergeSort(arr[:mid])
-    arr_2 = mergeSort(arr[mid:])
+    arr_1 = merge_sort(arr[:mid])
+    arr_2 = merge_sort(arr[mid:])
     return merge(arr_1, arr_2)
 
 
@@ -57,4 +57,4 @@ def merge(arr_1: list[int], arr_2: list[int]) -> list[int]:
 
 if __name__ == "__main__":
     data = [1, 5, 2, 4, 3, 9, 6, 8, 7]
-    print(mergeSort(data))
+    print(merge_sort(data))

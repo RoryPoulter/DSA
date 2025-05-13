@@ -5,7 +5,7 @@
 from random import sample
 
 
-def quickSort(array: list) -> list:
+def quick_sort(array: list) -> list:
     """Sorts a list of integers using the quicksort algorithm.
 
     Args:
@@ -17,7 +17,7 @@ def quickSort(array: list) -> list:
     if len(array) <= 1:
         return array
     left, pivot, right = partition(array)
-    return quickSort(left) + pivot+ quickSort(right)
+    return quick_sort(left) + pivot+ quick_sort(right)
 
 
 def partition(array: list) -> tuple:
@@ -38,5 +38,5 @@ def partition(array: list) -> tuple:
 if __name__ == "__main__":
     data = sample(range(20), 20)
     print(f"Unsorted data: \n{data}")
-    sorted_data = quickSort(data)
+    sorted_data = quick_sort(data)
     print(f"Sorted data: \n{sorted_data}")

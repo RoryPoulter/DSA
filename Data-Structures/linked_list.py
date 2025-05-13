@@ -16,6 +16,9 @@ class ListNode:
     def __repr__(self) -> str:
         return str(self.val)
 
+    def __eq__(self, node) -> bool:
+        return self.val == node.val
+
 
 class LinkedList:
     """Linked List data structure
@@ -23,7 +26,7 @@ class LinkedList:
     def __init__(self) -> None:
         self.head = None
 
-    def insertAtStart(self, data: Any) -> None:
+    def insert_at_start(self, data: Any) -> None:
         """Adds a new node to the start of the linked list
 
         Args:
@@ -33,11 +36,10 @@ class LinkedList:
         if self.head is None:
             self.head = node
             return
-        else:
-            node.next = self.head
-            self.head = node
+        node.next = self.head
+        self.head = node
 
-    def insertAtIndex(self, data: Any, index: int) -> None:
+    def insert_at_index(self, data: Any, index: int) -> None:
         """Adds a new node to a specified index. Indexing starts from 0
 
         Args:
@@ -49,7 +51,7 @@ class LinkedList:
         """
         node: ListNode = ListNode(data)
         if index == 0:
-            self.insertAtStart(node)
+            self.insert_at_start(node)
 
         position: int = 0
         current_node: ListNode | None = self.head
@@ -63,7 +65,7 @@ class LinkedList:
         else:
             raise IndexError("Index not present")
 
-    def insertAtEnd(self, data: Any) -> None:
+    def insert_at_end(self, data: Any) -> None:
         """Inserts a node to the end of the linked list
 
         Args:
@@ -80,7 +82,7 @@ class LinkedList:
 
         current_node.next = node
 
-    def updateNode(self, val: Any, index: int) -> None:
+    def update_node(self, val: Any, index: int) -> None:
         """Updates the value for a node at a specified index
 
         Args:
@@ -104,7 +106,7 @@ class LinkedList:
             else:
                 raise IndexError("Index not present")
 
-    def removeFirstNode(self) -> None:
+    def remove_first_node(self) -> None:
         """Removes the first node from the linked list
         """
         if self.head is None:
@@ -112,7 +114,7 @@ class LinkedList:
 
         self.head = self.head.next
 
-    def removeLastNode(self) -> None:
+    def remove_last_node(self) -> None:
         """Removes the last node from the linked list
         """
         if self.head is None:
@@ -124,7 +126,7 @@ class LinkedList:
 
         current_node.next = None
 
-    def removeAtIndex(self, index: int) -> None:
+    def remove_at_index(self, index: int) -> None:
         """Removes a node from a specified index
 
         Args:
@@ -139,7 +141,7 @@ class LinkedList:
         current_node = self.head
         position = 0
         if position == index:
-            self.removeFirstNode()
+            self.remove_first_node()
         else:
             while(current_node is not None and position+1 != index):
                 position = position+1
@@ -150,7 +152,7 @@ class LinkedList:
             else:
                 raise IndexError("Index not present")
 
-    def removeNode(self, data: Any) -> None:
+    def remove_node(self, data: Any) -> None:
         """Removes a node of a specified value
 
         Args:
@@ -159,7 +161,7 @@ class LinkedList:
         current_node = self.head
 
         if current_node.data == data:
-            self.removeFirstNode()
+            self.remove_first_node()
             return
 
         while(current_node is not None and current_node.next.data != data):
@@ -190,10 +192,10 @@ class LinkedList:
 
 if __name__ == "__main__":
     llist = LinkedList()
-    llist.insertAtEnd('a')
-    llist.insertAtEnd('b')
-    llist.insertAtStart('c')
-    llist.insertAtEnd('d')
-    llist.insertAtIndex('g', 2)
+    llist.insert_at_end('a')
+    llist.insert_at_end('b')
+    llist.insert_at_start('c')
+    llist.insert_at_end('d')
+    llist.insert_at_index('g', 2)
     print(len(llist))
     print(llist)

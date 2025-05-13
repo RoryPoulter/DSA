@@ -16,7 +16,7 @@ class Queue:
     def __repr__(self):
         return str(self.data)
 
-    def isEmpty(self) -> bool:
+    def is_empty(self) -> bool:
         """Method for determining if the queue is empty. If the points `f` an `r` are the same then
         the queue is empty.
         
@@ -27,7 +27,7 @@ class Queue:
         """
         return self.f == self.r
 
-    def isFull(self) -> bool:
+    def is_full(self) -> bool:
         """Method for determining if the queue is full. Can only store `n - 1` values to prevent
         full and empty state being identical.
 
@@ -49,7 +49,7 @@ class Queue:
         Raises:
             ValueError: If the queue is full
         """
-        if self.isFull():
+        if self.is_full():
             raise ValueError("Cannot enqueue value: queue is full")
         self.data[self.r] = val
         self.r  = (self.r + 1) % self.n
@@ -65,7 +65,7 @@ class Queue:
         Returns:
             Any: The value at the front of the queue
         """
-        if self.isEmpty():
+        if self.is_empty():
             raise ValueError("Cannot dequeue: queue is empty")
         val = self.data[self.f]
         self.data[self.f] = None
@@ -84,7 +84,7 @@ class Queue:
 if __name__ == "__main__":
     # Initialise the queue
     q = Queue(5)
-    print(q.isEmpty())
+    print(q.is_empty())
     print(q)
     q.enqueue(10)
     q.enqueue(15)
@@ -96,4 +96,4 @@ if __name__ == "__main__":
     q.enqueue(2)
     q.enqueue(3)
     print(q)
-    print(q.isFull())
+    print(q.is_full())

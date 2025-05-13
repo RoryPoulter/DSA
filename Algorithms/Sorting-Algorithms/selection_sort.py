@@ -2,7 +2,7 @@
 """
 
 
-def selectionSort(array: list) -> list:
+def selection_sort(array: list) -> list:
     """Sorts an list in ascending order using selection sort algorithm
 
     Args:
@@ -25,4 +25,4 @@ def selectionSort(array: list) -> list:
 
 if __name__ == "__main__":
     data = [10, 5, 2, 4, 8]
-    print(selectionSort(data))
+    print(selection_sort(data))

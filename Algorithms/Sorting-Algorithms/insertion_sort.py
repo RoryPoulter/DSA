@@ -5,7 +5,7 @@
 from random import sample
 
 
-def insertionSort(array: list) -> list:
+def insertion_sort(array: list) -> list:
     """Sorts an array in ascending order using the insertion sort algorithm
 
     Args:
@@ -26,5 +26,5 @@ def insertionSort(array: list) -> list:
 if __name__ == "__main__":
     data = sample(range(20), 20)
     print(f"Unsorted data: \n{data}")
-    sorted_data = insertionSort(data)
+    sorted_data = insertion_sort(data)
     print(f"Sorted data: \n{sorted_data}")

@@ -1,14 +1,13 @@
-"""Demo code for quick select algorithm
+"""Demo code for quick select algorithm.
 """
 
 
 def quick_select(array: list, i: int) -> int:
-    """Quick select algorithm for finding ith smallest element in an array. `i = 1` will return the
-    smallest value in `array`.
+    """Quick select algorithm for finding ith smallest element in an array.
 
     Args:
         array (list): The array to be searched
-        i (int): The order of magnitude of the value
+        i (int): The order of magnitude of the value. `1` represents the smallest value.
 
     Raises:
         ValueError: If `i > len(array)`

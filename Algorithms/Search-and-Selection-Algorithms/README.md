@@ -54,9 +54,9 @@ def quick_select(array: list, i: int) -> int:
     return quick_select(right, i - k + 1)
 
 
-# Simple partition function - pivots on 1st element
+# Simple partition function - pivots on last element
 def partition(array: list) -> tuple:
-    pivot = array[0]
+    pivot = array[~0]
     left = [x for x in array[1:] if x < pivot]
     right = [x for x in array[1:] if x >= pivot]
     return left, [pivot], right

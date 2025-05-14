@@ -30,7 +30,7 @@ def quick_select(array: list, i: int) -> int:
 
 
 def partition(array: list) -> tuple:
-    """Simple partition function. Chooses the first element as the pivot
+    """Simple partition function. Chooses the last element as the pivot
 
     Args:
         array (list): The array of numbers
@@ -38,7 +38,7 @@ def partition(array: list) -> tuple:
     Returns:
         tuple: The left list, pivot, and right list
     """
-    pivot = array[0]
+    pivot = array[~0]
     left = [x for x in array[1:] if x < pivot]
     right = [x for x in array[1:] if x >= pivot]
     return left, [pivot], right

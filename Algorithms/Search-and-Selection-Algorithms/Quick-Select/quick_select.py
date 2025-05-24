@@ -1,5 +1,6 @@
 """Demo code for quick select algorithm.
 """
+from random import sample, randint
 
 
 def quick_select(array: list, i: int) -> int:
@@ -15,9 +16,9 @@ def quick_select(array: list, i: int) -> int:
     Returns:
         int: The ith smallest number
     """
-    if i > len(array):
-        raise ValueError("'i' is greater than length of 'array'")
     i -= 1
+    if i > len(array):
+        raise ValueError(f"'{i=}' is greater than length of 'array {len(array)=}'")
     if len(array) == 1:
         return array[0]
     left, pivot, right = partition(array)
@@ -26,7 +27,7 @@ def quick_select(array: list, i: int) -> int:
         return pivot
     if k > i:
         return quick_select(left, i+1)
-    return quick_select(right, i - k + 1)
+    return quick_select(right, i - k)
 
 
 def partition(array: list) -> tuple:
@@ -38,12 +39,16 @@ def partition(array: list) -> tuple:
     Returns:
         tuple: The left list, pivot, and right list
     """
-    pivot = array[~0]
+    pivot = array[0]
     left = [x for x in array[1:] if x < pivot]
     right = [x for x in array[1:] if x >= pivot]
-    return left, [pivot], right
+    return left, pivot, right
 
 
 if __name__ == "__main__":
-    data = [5,2,4,1,3]
-    print(quick_select(data, 1))
+    data = sample(range(1, 100), 10)
+    index = randint(1, 10)
+    print(f"{index=}, {data=}")
+    x = quick_select(data, index)
+    print(f"{x=}")
+    assert sorted(data)[index-1] == x

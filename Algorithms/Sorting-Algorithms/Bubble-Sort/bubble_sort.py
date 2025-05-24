@@ -15,15 +15,15 @@ def bubble_sort(array: list) -> list:
         list: The sorted list
     """
 
-    valid = False
-    while not valid:
-        valid = True
+    is_sorted = False
+    while not is_sorted:
+        is_sorted = True
         for i in range(len(array)-1):
             if array[i] > array[i+1]:
                 temp = array[i]
                 array[i] = array[i+1]
                 array[i+1] = temp
-                valid = False
+                is_sorted = False
     return array
 
 
